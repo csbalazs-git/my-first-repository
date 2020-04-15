@@ -1,19 +1,19 @@
 let data01 = {
     photo: './img/csirke.jpg',
     title: 'Csirkepaprikás',
-    description: 'Ez egy nagyon finom csirkepaprikás kapros túrógombóccal'
+    description: 'Ez egy nagyon finom csirkepaprikás kapros túrógombóccal',
 };
 
 let data02 = {
     photo: './img/sertes.jpg',
     title: 'Töltött sertéskaraj',
-    description: 'Ez egy nagyon finom sertéskaraj sajttal, kolbásszal töltve'  
+    description: 'Ez egy nagyon finom sertéskaraj sajttal, kolbásszal töltve',
 }
 
 let data03 = {
     photo: './img/szendvics.jpg',
     title: 'Rántotthúsos melegszendvics',
-    description: 'Ez egy nagyon finom rántotthúsos melegszendvics sok sajttal, medvehagymával'  
+    description: 'Ez egy nagyon finom rántotthúsos melegszendvics sok sajttal, medvehagymával',
 }
 
 let currentPhoto = 0;
@@ -46,4 +46,8 @@ $('#balra-nyil').click(() => {
       } else 
       loadPhoto(currentPhoto)
 })
+
+// names.forEach((name) => { // for each item in names
+//     console.log(`Welcome, dear ${name}!`); // print out the item
+//   })
 

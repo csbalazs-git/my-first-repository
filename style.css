@@ -6,6 +6,7 @@ body {
     width: 1000px;
     height: 500px;
     display: flex;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -26,6 +27,7 @@ body {
     background-position: center;
     width: 50px;
     background-color: ivory;
+    cursor: pointer;
 }
 
 #jobbra-nyil {
@@ -36,6 +38,25 @@ body {
     transform: scaleX(-1);
     width: 50px;
     background-color: ivory;
+    cursor: pointer;
+}
+
+#thumbnail-container {
+    width: 900px;
+    height: 150px;
+    background-color: cadetblue;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 220px;
+    display: flex;
+}
+
+#thumbnail1, #thumbnail2 {
+    width: 70px;
+    height: 70px;
+    background-color: slategray;
+    margin: 10px;
 }
 
 .photo-texts {
