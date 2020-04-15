@@ -16,9 +16,35 @@ let data03 = {
     description: 'Ez egy nagyon finom rántotthúsos melegszendvics sok sajttal, medvehagymával'  
 }
 
-let currentPhoto = 2;
+let currentPhoto = 0;
 
 let imagesData = [data01, data02, data03];
-$('#photo').attr('src', imagesData[currentPhoto].photo);
-$('#photo-title').text(imagesData[currentPhoto].title);
-$('#photo-description').text(imagesData[currentPhoto].description);
+
+let loadPhoto = (photoNumber) => {
+    $('#photo').attr('src', imagesData[photoNumber].photo);
+    $('#photo-title').text(imagesData[photoNumber].title);
+    $('#photo-description').text(imagesData[photoNumber].description);
+  }
+  
+loadPhoto(currentPhoto);
+  
+$('#jobbra-nyil').click(() => {
+    if(currentPhoto < imagesData.length) {
+        currentPhoto++;
+        loadPhoto(currentPhoto);
+      } else {
+        currentPhoto = 0;
+        loadPhoto(currentPhoto)
+      }
+  })
+
+$('#balra-nyil').click(() => {
+  if(currentPhoto < 0) {
+      currentPhoto = imagesData.length;
+      loadPhoto(currentPhoto);
+      } else {
+      currentPhoto--;
+      loadPhoto(currentPhoto)
+  }
+})
+
