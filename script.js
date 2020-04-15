@@ -29,8 +29,8 @@ let loadPhoto = (photoNumber) => {
 loadPhoto(currentPhoto);
   
 $('#jobbra-nyil').click(() => {
+    currentPhoto++;
     if(currentPhoto < imagesData.length) {
-        currentPhoto++;
         loadPhoto(currentPhoto);
       } else {
         currentPhoto = 0;
@@ -39,12 +39,11 @@ $('#jobbra-nyil').click(() => {
   })
 
 $('#balra-nyil').click(() => {
-  if(currentPhoto < 0) {
-      currentPhoto = imagesData.length;
+    currentPhoto--;
+    if(currentPhoto < 0) {
+      currentPhoto = imagesData.length-1;
       loadPhoto(currentPhoto);
-      } else {
-      currentPhoto--;
+      } else 
       loadPhoto(currentPhoto)
-  }
 })
 
