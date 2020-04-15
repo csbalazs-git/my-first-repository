@@ -1,0 +1,55 @@
+body {
+    font-family: 'Merriweather', serif;
+}
+
+#viewer {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#img-container {
+    width: 800px;
+}
+
+#photo {
+    width: 100%;
+    height: 100%;
+}
+
+#balra-nyil {
+    background-image: url("http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    background-color: ivory;
+}
+
+#jobbra-nyil {
+    background-image: url("http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 50px;
+    background-color: ivory;
+}
+
+.photo-texts {
+    background-color: rgba(43, 36, 36, 0.85);
+    color: white;
+    width: 800px;
+    position: absolute;
+    bottom: 0px;
+}
+
+h1, p {
+    margin-left: 20px;
+}
+
+h1 {
+    line-height: 1em;
+}
