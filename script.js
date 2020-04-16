@@ -63,6 +63,6 @@ imagesData.forEach((data, index) => {
   $('.container').click((event) => {
     let indexClicked = $(event.target).attr('data-index');
     let numberIndex = parseInt(indexClicked);
-    $('#container').text(imagesData[indexClicked].title);
+    $('.container').text(imagesData[indexClicked].title);
   });
 });
