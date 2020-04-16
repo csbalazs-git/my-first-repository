@@ -58,11 +58,13 @@ $('#balra-nyil').click(() => {
 //    });
 // });
 
+console.log(imagesData[0].title)
+
 imagesData.forEach((data, index) => {
   $('#thumbnail-container').append('<div class="container" data-index="${index}"><img src="' + data.photo + '" id="containerPhoto"></div>');
   $('.container').click((event) => {
     let indexClicked = $(event.target).attr('data-index');
     let numberIndex = parseInt(indexClicked);
-    $('.container').text(imagesData[indexClicked].title);
+    $('.container').text(data[indexClicked].title);
   });
 });
