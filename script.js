@@ -46,8 +46,10 @@ $('#balra-nyil').click(() => {
       } else 
       loadPhoto(currentPhoto)
 })
-
-// names.forEach((name) => { // for each item in names
-//     console.log(`Welcome, dear ${name}!`); // print out the item
-//   })
-
+let counter = 0;
+ imagesData.forEach((data) => {
+     $('#thumbnail-container').append(
+        '<div class ="container" id="container-' + counter + '"><img src="' + data.photo + '" data-number="' + counter + '" id="containerPhoto"><blockquote class="speech-bubble">' + data.title + '</blockquote></div>'
+     );
+    counter++;
+   });
