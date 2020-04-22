@@ -1,16 +1,16 @@
-let data01 = {
+let photo01 = {
     photo: './img/csirke.jpg',
     title: 'Csirkepaprikás',
     description: 'Ez egy nagyon finom csirkepaprikás kapros túrógombóccal',
 };
 
-let data02 = {
+let photo02 = {
     photo: './img/sertes.jpg',
     title: 'Töltött sertéskaraj',
     description: 'Ez egy nagyon finom sertéskaraj sajttal, kolbásszal töltve',
 }
 
-let data03 = {
+let photo03 = {
     photo: './img/szendvics.jpg',
     title: 'Rántotthúsos melegszendvics',
     description: 'Ez egy nagyon finom rántotthúsos melegszendvics sok sajttal, medvehagymával',
@@ -18,7 +18,7 @@ let data03 = {
 
 let currentPhoto = 0;
 
-let imagesData = [data01, data02, data03];
+let imagesData = [photo01, photo02, photo03];
 
 let loadPhoto = (photoNumber) => {
     $('#photo').attr('src', imagesData[photoNumber].photo);
@@ -46,25 +46,24 @@ $('#balra-nyil').click(() => {
       } else 
       loadPhoto(currentPhoto)
 })
-// let counter = 0;
-//  imagesData.forEach((data) => {
-//      $('#thumbnail-container').append(
-//         '<div class ="container" id="container-' + counter + '"><img src="' + data.photo + '"data-number="' + counter + '" id="containerPhoto"></div>'
-//     );
-//     $('.container').click((event) => {
-//         let indexClicked = $(event.target).attr('data-number');
-//         let numberIndex = parseInt(indexClicked);
-//         $('.container').text(imagesData[indexClicked].title);
-//    });
-// });
 
-console.log(imagesData[0].title)
+let counter = 0;
+imagesData.forEach(photo => {
+    $("#thumbnails").append(
+        '<div class="container" id="kontener-' + counter + '"><img src="' + photo.photo + '" data-number="' + counter +  '" id="containerPhoto"><blockquote class="speech-bubble">' + photo.title + '</blockquote></div>'
+    );
+    counter++;
+});
 
-imagesData.forEach((data, index) => {
-  $('#thumbnail-container').append('<div class="container" data-index="${index}"><img src="' + data.photo + '" id="containerPhoto"></div>');
-  $('.container').click((event) => {
-    let indexClicked = $(event.target).attr('data-index');
-    let numberIndex = parseInt(indexClicked);
-    $('.container').text(data[indexClicked].title);
-  });
+$(".container").on( "click",function (event) {
+  currentPhoto = $(event.target).attr("data-number");
+  loadPhoto(currentPhoto);
+  let id = "#kontener-" + currentPhoto;
+  $(id).css("transform", "scale(1.1)");
+  for(let counter2 = 0; counter2 < imagesData.length; counter2++){
+    if(counter2 != currentPhoto){
+        let id2 = "#kontener-" + counter2;
+        $(id2).css("transform", "scale(1.0)");
+    }
+}
 });
